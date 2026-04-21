@@ -327,30 +327,3 @@ cd lifepulseapp/client && npm start
 
 Then visit **http://localhost:3000**
 
----
-
-## Submission Checklist
-
-- [x] GitHub repo with `client/` and `server/` folders
-- [x] Root-level `README.md` with setup instructions, API docs, screenshots section
-- [x] All 60 questions in `questions.js` with required distribution
-- [x] At least 3 distinct css-doodle patterns (login, register, survey header ×3 rotating)
-- [x] Working JWT authentication — register, login, token storage, protected routes
-- [x] Survey submit (upsert) and retrieve endpoints with MongoDB
-- [x] Results page with radar chart + bar chart + score breakdown
-- [x] `.gitignore` covering node_modules, .env, build output, OS files
-- [x] `.env.example` provided
-
----
-
-## Instructor Notes
-
-- **Monorepo**: `client/` (React 18) and `server/` (Node/Express) share one repository
-- **css-doodle**: imported in `src/index.js` via `import 'css-doodle'`, used as `<css-doodle>` JSX tags with `aria-hidden="true"` on all decorative instances
-- **Auth flow**: Register/Login → JWT stored in `localStorage` → Axios interceptor attaches `Bearer` token → `PrivateRoute` guards `/survey` and `/results`
-- **Upsert**: `Response.findOneAndUpdate(..., { upsert: true })` ensures no duplicate entries per user
-- **Score normalisation**: All answer types normalised to 0–100 for the results charts
-
----
-
-*LifePulse App — NUCES Chiniot-Faisalabad Campus | Instructor: Zaki Akram*
